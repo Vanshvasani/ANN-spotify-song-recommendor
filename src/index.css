@@ -1,0 +1,50 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #111511;
+  color: #eef3e9;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+button, input { font: inherit; }
+button, a, input { outline-offset: 4px; }
+button { cursor: pointer; }
+button:disabled { opacity: 0.55; cursor: wait; }
+.app { max-width: 1150px; margin: auto; padding: 40px 20px; }
+header p, .panel > p { color: #b1bcaa; line-height: 1.6; }
+.eyebrow { color: #c6f66f; font-size: 13px; letter-spacing: 2px; }
+h1 { font-size: clamp(28px, 5vw, 42px); }
+h2 { font-size: 21px; }
+h3 { font-size: 17px; line-height: 1.5; overflow-wrap: anywhere; }
+.search-form { display: flex; gap: 12px; margin: 28px 0; }
+.search-form input {
+  flex: 1; min-width: 0; padding: 14px;
+  border: 1px solid #526044; border-radius: 8px;
+  background: #1c2418; color: white;
+}
+.search-form button, .song-actions button {
+  padding: 12px 18px; border: 0; border-radius: 8px;
+  background: #c6f66f; color: #17200e;
+}
+.columns { display: grid; grid-template-columns: 1fr 1.3fr; gap: 24px; align-items: start; }
+.panel {
+  min-width: 0; padding: 24px; border: 1px solid #34402c;
+  border-radius: 14px; background: #192016;
+}
+.song-button {
+  display: block; width: 100%; margin: 10px 0; padding: 15px;
+  text-align: left; background: #232d1d; color: white;
+  border: 1px solid #39472e; border-radius: 8px; overflow-wrap: anywhere;
+}
+.song-button[aria-pressed="true"] { border-color: #c6f66f; background: #304023; }
+.song-button span { display: block; margin-top: 7px; color: #bac7ae; font-size: 14px; }
+.current-song { padding: 18px; margin: 20px 0; border-left: 4px solid #c6f66f; background: #26351e; }
+.current-song > span { color: #c6f66f; font-size: 12px; letter-spacing: 1px; }
+.recommendation { padding: 15px 0; border-bottom: 1px solid #39472e; }
+.recommendation > p, .score { color: #b6c4aa; }
+.song-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.song-actions a { color: #c6f66f; }
+.song-actions button { font-size: 14px; }
+.error { padding: 15px; border: 1px solid #aa7061; border-radius: 8px; background: #442821; color: #ffe0d6; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 750px) { .columns { grid-template-columns: 1fr; } .panel { padding: 18px; } }
